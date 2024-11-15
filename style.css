@@ -1,0 +1,130 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Contenedor principal (más ancho) */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px; /* Aumentamos el ancho */
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilos del encabezado */
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estilo de la imagen del ahorcado (más grande) */
+#imagen img {
+    width: 200px; /* Aumentamos el tamaño de la imagen */
+    height: 200px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo de la palabra oculta */
+#palabra {
+    font-size: 24px;
+    margin: 15px 0;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilos para el campo de texto (más ancho) */
+input[type="text"] {
+    font-size: 20px;
+    padding: 12px; /* Aumentamos el padding */
+    text-align: center;
+    width: 80px; /* Aumentamos el ancho del campo de texto */
+    margin-top: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border 0.3s;
+    background-color: #f7f7f7;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Estilos de los botones (más grandes y anchos) */
+button {
+    padding: 12px 30px; /* Aumentamos el padding para que el botón sea más grande */
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Estilo de los mensajes y los intentos */
+#intentos,
+#letrasFalladas,
+#mensaje {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Estilos de la sección de reiniciar partida */
+button:focus,
+input:focus {
+    outline: none;
+}
+
+/* Estilo de los mensajes finales */
+#mensaje {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#mensaje.ganaste {
+    color: #28a745;
+}
+
+#mensaje.perdiste {
+    color: #dc3545;
+}
+
+/* Animación del mensaje */
+#mensaje {
+    transition: color 0.5s ease-in-out;
+}
