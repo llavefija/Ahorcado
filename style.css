@@ -17,7 +17,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 500px; /* Aumentamos el ancho */
+    width: 500px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -36,7 +36,7 @@ h1 {
 
 /* Estilo de la imagen del ahorcado (más grande) */
 #imagen img {
-    width: 200px; /* Aumentamos el tamaño de la imagen */
+    width: 200px;
     height: 200px;
     margin-bottom: 25px;
     transition: all 0.3s ease-in-out;
@@ -54,9 +54,9 @@ h1 {
 /* Estilos para el campo de texto (más ancho) */
 input[type="text"] {
     font-size: 20px;
-    padding: 12px; /* Aumentamos el padding */
+    padding: 12px; 
     text-align: center;
-    width: 80px; /* Aumentamos el ancho del campo de texto */
+    width: 80px;
     margin-top: 15px;
     border: 2px solid #ddd;
     border-radius: 8px;
@@ -69,9 +69,9 @@ input[type="text"]:focus {
     outline: none;
 }
 
-/* Estilos de los botones (más grandes y anchos) */
+/* Estilos de los botones*/
 button {
-    padding: 12px 30px; /* Aumentamos el padding para que el botón sea más grande */
+    padding: 12px 30px; 
     background-color: #4CAF50;
     color: white;
     font-size: 18px;

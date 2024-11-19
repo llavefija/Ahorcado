@@ -5,11 +5,34 @@ let intentos = 6;
 let letrasFalladas = [];
 let juegoTerminado = false;
 
+// Ruta al archivo JSON
+const jsonPath = './palabras.json';
+
 // Lista de palabras
-const palabras = ["javascript", "html", "css", "programacion", "ahorcado"];
+let palabras = [];
+
+// Función para cargar las palabras desde el JSON
+function cargarPalabras() {
+    fetch(jsonPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error al cargar JSON: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            palabras = data.palabras; // Asignamos las palabras cargadas
+            iniciarJuego(); // Iniciamos el juego una vez cargadas
+        })
+        .catch(error => {
+            console.error('Hubo un error al leer el archivo JSON:', error);
+            document.getElementById('mensaje').textContent = 'No se pudieron cargar las palabras.';
+        });
+}
 
 // Función para comenzar una nueva partida
 function iniciarJuego() {
+    
     // Seleccionamos una palabra aleatoria
     palabraSecreta = palabras[Math.floor(Math.random() * palabras.length)];
     palabraOculta = '_'.repeat(palabraSecreta.length);
@@ -30,9 +53,11 @@ function iniciarJuego() {
 
 // Función para procesar el intento del jugador
 function probarLetra() {
+
     if (juegoTerminado) return;
 
     const letra = document.getElementById("letra").value.toLowerCase();
+
     if (letra && letra.length === 1 && !letrasFalladas.includes(letra)) {
         if (palabraSecreta.includes(letra)) {
             // Si la letra está en la palabra, la mostramos
@@ -86,8 +111,8 @@ function reiniciarPartida() {
     iniciarJuego();
 }
 
-// Llamamos a iniciarJuego al cargar la página
-window.onload = iniciarJuego;
+// Llamamos a iniciarJuego y cargarPalabras al cargar la página
+window.onload = cargarPalabras();
 
 // Event listener para la tecla Enter
 document.getElementById("letra").addEventListener("keypress", function(event) {
